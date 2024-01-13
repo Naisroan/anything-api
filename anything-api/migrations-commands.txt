@@ -1,0 +1,3 @@
+Add-Migration Init -p Infrastructure -s anything-api -o Persistence/Migrations
+
+Update-Database -p Infrastructure -s anything-api
