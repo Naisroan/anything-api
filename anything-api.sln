@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{905B2283-9D31-4DBA-AA1B-2F09C9AB5DD6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CDB84C38-4494-4F40-A316-AE36BB61E2A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Tickets.UnitTests", "Tests\UnitTests\Application.Tickets.UnitTests\Application.Tickets.UnitTests.csproj", "{E43528E8-E7F5-4736-BA1F-F867941674C3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{E6E10ADA-B994-4C62-B30E-48D72A12541A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7CB16F7C-07FF-49C6-BB23-43423F92AF62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tickets.UnitTests", "Application.Tickets.UnitTests\Application.Tickets.UnitTests.csproj", "{E43528E8-E7F5-4736-BA1F-F867941674C3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{FFB4588B-3E40-4EF1-844D-31814638C6B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,8 +52,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E6E10ADA-B994-4C62-B30E-48D72A12541A} = {CDB84C38-4494-4F40-A316-AE36BB61E2A4}
-		{E43528E8-E7F5-4736-BA1F-F867941674C3} = {E6E10ADA-B994-4C62-B30E-48D72A12541A}
+		{E43528E8-E7F5-4736-BA1F-F867941674C3} = {FFB4588B-3E40-4EF1-844D-31814638C6B8}
+		{FFB4588B-3E40-4EF1-844D-31814638C6B8} = {7CB16F7C-07FF-49C6-BB23-43423F92AF62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A0E3BAF-91E8-4284-9B45-37ECC8FAFCC5}
