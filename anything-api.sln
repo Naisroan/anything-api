@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "anything-api", "src\anything-api\anything-api.csproj", "{C73F00FB-520A-4A4D-863E-7F69214314DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "anything-api", "src\anything-api\anything-api.csproj", "{C73F00FB-520A-4A4D-863E-7F69214314DA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{01D99CFB-0E29-49D9-885B-A130FB6F8C52} = {01D99CFB-0E29-49D9-885B-A130FB6F8C52}
 		{6D96C548-9617-4F6C-8CD3-E1B5C813A5D5} = {6D96C548-9617-4F6C-8CD3-E1B5C813A5D5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{01D99CFB-0E29-49D9-885B-A130FB6F8C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{01D99CFB-0E29-49D9-885B-A130FB6F8C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{6D96C548-9617-4F6C-8CD3-E1B5C813A5D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{6D96C548-9617-4F6C-8CD3-E1B5C813A5D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{905B2283-9D31-4DBA-AA1B-2F09C9AB5DD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{905B2283-9D31-4DBA-AA1B-2F09C9AB5DD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CDB84C38-4494-4F40-A316-AE36BB61E2A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{E6E10ADA-B994-4C62-B30E-48D72A12541A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tickets.UnitTests", "Application.Tickets.UnitTests\Application.Tickets.UnitTests.csproj", "{E43528E8-E7F5-4736-BA1F-F867941674C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,9 +43,17 @@ Global
 		{905B2283-9D31-4DBA-AA1B-2F09C9AB5DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{905B2283-9D31-4DBA-AA1B-2F09C9AB5DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{905B2283-9D31-4DBA-AA1B-2F09C9AB5DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E43528E8-E7F5-4736-BA1F-F867941674C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43528E8-E7F5-4736-BA1F-F867941674C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43528E8-E7F5-4736-BA1F-F867941674C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43528E8-E7F5-4736-BA1F-F867941674C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6E10ADA-B994-4C62-B30E-48D72A12541A} = {CDB84C38-4494-4F40-A316-AE36BB61E2A4}
+		{E43528E8-E7F5-4736-BA1F-F867941674C3} = {E6E10ADA-B994-4C62-B30E-48D72A12541A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A0E3BAF-91E8-4284-9B45-37ECC8FAFCC5}

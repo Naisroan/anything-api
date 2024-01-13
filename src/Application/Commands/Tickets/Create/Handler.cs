@@ -5,13 +5,13 @@ using MediatR;
 
 namespace Application.Commands.Tickets.Create;
 
-internal sealed class CreateTicketHandler : IRequestHandler<CreateTicketCommand, ErrorOr<Unit>>
+public sealed class CreateTicketCommandHandler : IRequestHandler<CreateTicketCommand, ErrorOr<Unit>>
 {
     private readonly ITicketRepository _repository;
 
     private readonly IUnitOfWork _unitOfWork;
 
-    public CreateTicketHandler(ITicketRepository repository, IUnitOfWork unitOfWork)
+    public CreateTicketCommandHandler(ITicketRepository repository, IUnitOfWork unitOfWork)
     {
         _repository = repository ?? throw new ArgumentException(nameof(ITicketRepository));
         _unitOfWork = unitOfWork ?? throw new ArgumentException(nameof(IUnitOfWork));
