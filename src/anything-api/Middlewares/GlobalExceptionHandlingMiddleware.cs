@@ -8,9 +8,15 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
 {
     private readonly ILogger<GlobalExceptionHandlingMiddleware> _logger;
 
-    public GlobalExceptionHandlingMiddleware(ILogger<GlobalExceptionHandlingMiddleware> logger)
+    private readonly Bugsnag.IClient _bugsnag;
+
+    public GlobalExceptionHandlingMiddleware(
+        ILogger<GlobalExceptionHandlingMiddleware> logger,
+        Bugsnag.IClient bugsnag
+    )
     {
         _logger = logger;
+        _bugsnag = bugsnag;
     }
 
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
@@ -22,6 +28,7 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         catch (Exception ex)
         {
             _logger.LogError(ex, ex.Message);
+            _bugsnag.Notify(ex);
 
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
