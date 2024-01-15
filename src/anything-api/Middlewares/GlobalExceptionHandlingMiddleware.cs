@@ -8,14 +8,18 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
 {
     private readonly ILogger<GlobalExceptionHandlingMiddleware> _logger;
 
+    private readonly IWebHostEnvironment _environment;
+
     private readonly Bugsnag.IClient _bugsnag;
 
     public GlobalExceptionHandlingMiddleware(
         ILogger<GlobalExceptionHandlingMiddleware> logger,
+        IWebHostEnvironment environment,
         Bugsnag.IClient bugsnag
     )
     {
         _logger = logger;
+        _environment = environment;
         _bugsnag = bugsnag;
     }
 
@@ -28,7 +32,8 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         catch (Exception ex)
         {
             _logger.LogError(ex, ex.Message);
-            _bugsnag.Notify(ex);
+
+            SendBugsnagNotify(ex);
 
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
@@ -43,5 +48,15 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
             context.Response.ContentType = "application/json";
             await context.Response.WriteAsync(JsonSerializer.Serialize(pd));
         }
+    }
+
+    private void SendBugsnagNotify(Exception ex)
+    {
+        if (_environment.IsDevelopment())
+        {
+            return;
+        }
+
+        _bugsnag.Notify(ex);
     }
 }
